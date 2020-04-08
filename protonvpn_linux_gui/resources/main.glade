@@ -364,21 +364,6 @@
             <property name="row_homogeneous">True</property>
             <property name="column_homogeneous">True</property>
             <child>
-              <object class="GtkRadioButton" id="protocol_tcp_checkbox">
-                <property name="label" translatable="yes">TCP</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="margin_right">15</property>
-                <property name="active">True</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkRadioButton" id="protocol_udp_checkbox">
                 <property name="label" translatable="yes">UDP</property>
                 <property name="visible">True</property>
@@ -387,7 +372,6 @@
                 <property name="margin_left">15</property>
                 <property name="active">True</property>
                 <property name="draw_indicator">True</property>
-                <property name="group">protocol_tcp_checkbox</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -400,7 +384,7 @@
                 <property name="can_focus">False</property>
                 <property name="margin_top">10</property>
                 <property name="margin_bottom">10</property>
-                <property name="label" translatable="yes">Default OpenVPN Protocol</property>
+                <property name="label" translatable="yes">Default VPN Protocol</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>
                   <attribute name="size" value="12000"/>
@@ -409,8 +393,40 @@
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">1</property>
-                <property name="width">4</property>
+                <property name="width">5</property>
               </packing>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="protocol_tcp_checkbox">
+                <property name="label" translatable="yes">TCP</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="margin_right">15</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="protocol_ikve2_checkbox">
+                <property name="label" translatable="yes">IKEv2</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">protocol_tcp_checkbox</property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
             <child>
               <placeholder/>
@@ -1007,7 +1023,7 @@
                         <property name="can_focus">False</property>
                         <property name="margin_top">10</property>
                         <property name="margin_bottom">10</property>
-                        <property name="label" translatable="yes">Default OpenVPN Protocol</property>
+                        <property name="label" translatable="yes">Default VPN Protocol</property>
                         <attributes>
                           <attribute name="weight" value="bold"/>
                           <attribute name="size" value="12000"/>
@@ -1016,7 +1032,7 @@
                       <packing>
                         <property name="left_attach">0</property>
                         <property name="top_attach">0</property>
-                        <property name="width">4</property>
+                        <property name="width">5</property>
                       </packing>
                     </child>
                     <child>
@@ -1062,7 +1078,21 @@
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="top_attach">2</property>
-                        <property name="width">2</property>
+                        <property name="width">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="protocol_ikve2_update_checkbox">
+                        <property name="label" translatable="yes">IKEv2</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">protocol_tcp_checkbox</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">1</property>
                       </packing>
                     </child>
                     <child>
